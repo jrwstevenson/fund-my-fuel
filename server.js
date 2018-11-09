@@ -27,13 +27,13 @@ require("./config/passport")(passport);
 
 // Routes
 const users = require("./routes/api/users");
-const accounts = require("./routes/api/accounts");
+const profile = require("./routes/api/profile");
 const trips = require("./routes/api/trips");
 const vehicles = require("./routes/api/vehicles");
 
 // Use Routes
 app.use("/api/users", users);
-app.use("/api/accounts", accounts);
+app.use("/api/profile", profile);
 app.use("/api/trips", trips);
 app.use("/api/vehicles", vehicles);
 

@@ -33,7 +33,9 @@ router.post("/register", (req, res) => {
     } else {
       const newUser = new User({
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName
       });
 
       bcrypt.genSalt(10, (err, salt) => {
@@ -50,7 +52,7 @@ router.post("/register", (req, res) => {
   });
 });
 
-// @route   GET api/users/login
+// @route   POST api/users/login
 // @desc    Login users / return token
 // @Access  Public
 router.post("/login", (req, res) => {

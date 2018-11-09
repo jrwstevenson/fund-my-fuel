@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
   firstName: {
-    type: String
-    // required: true
+    type: String,
+    required: true
   },
   lastName: {
-    type: String
-    // required: true
+    type: String,
+    required: true
   },
   email: {
     type: String,
@@ -21,8 +21,16 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  profile: {
+    type: Schema.Types.ObjectId,
+    ref: "profile"
+  },
+  userLevel: {
+    type: Number,
+    default: 1
   }
 });
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("users", UserSchema);
 module.exports = User;
