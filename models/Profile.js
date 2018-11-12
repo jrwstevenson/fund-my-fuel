@@ -8,8 +8,25 @@ const ProfileSchema = new Schema({
   },
   trips: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "trips"
+      points: {
+        type: Array
+      },
+      image: {
+        type: String
+      },
+      vehicle: {
+        id: String
+      },
+      startTime: {
+        type: Date
+      },
+      finishTime: {
+        type: Date
+      },
+      dateCreated: {
+        type: Date,
+        default: Date.now
+      }
     }
   ],
   vehicles: [
@@ -44,7 +61,7 @@ const ProfileSchema = new Schema({
       registration: {
         type: String
       },
-      ifDefault: {
+      isDefault: {
         type: Boolean,
         default: false
       },
